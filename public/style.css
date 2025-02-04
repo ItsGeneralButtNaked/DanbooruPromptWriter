@@ -44,6 +44,8 @@ body {
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-height: 90vh; /* 90% de la hauteur de la fenêtre */
+  overflow-y: auto; /* Active le scroll vertical si nécessaire */
 }
 
 .container:hover {
@@ -115,6 +117,8 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   margin: 20px 0;
+  max-height: 50vh; /* Limite la hauteur de la zone de tags */
+  overflow-y: auto; /* Permet de défiler les tags en cas de dépassement */
 }
 
 .tag {
