@@ -1,0 +1,38 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danbooru Prompt Writing Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Danbooru Prompt</h1>
+    <h2 style="font-size: smaller; font-weight: 500;">Writing assistant</h2>
+    <div class="prompt-input">
+      <input type="text" id="tagInput" placeholder="Enter a tag and press Enter or comma...">
+      <div id="suggestions" class="suggestions"></div>
+    </div>
+    <div id="tagsContainer" class="tags-container"></div>
+    <div class="buttons">
+      <button id="copyPrompt">Copy Prompt</button>
+      <button id="savePrompt">Save Prompt</button>
+    </div>
+    <div class="save-prompt-section">
+      <input type="text" id="promptName" placeholder="Prompt name">
+    </div>
+    <div class="prompt-manager">
+      <h2>Saved Prompts</h2>
+      <ul id="savedPromptsList"></ul>
+    </div>
+    <div class="import-export-section">
+      <button id="exportPrompts">Export Prompts</button>
+      <button id="importPrompts">Import Prompts</button>
+      <input type="file" id="importFile" accept="application/json" style="display: none;">
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

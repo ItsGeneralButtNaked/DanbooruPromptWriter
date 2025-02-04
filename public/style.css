@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+
+/* Variables pour les couleurs et styles */
+:root {
+  --primary: #3b82f6;
+  --primary-dark: #2563eb;
+  --secondary: #10b981;
+  --danger: #ef4444;
+  --background: #f0f2f5;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --text-color: #333;
+  --border-color: #e5e7eb;
+}
+
+/* Reset minimal */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Geist', sans-serif;
+  background: var(--background);
+}
+
+/* Centre le container avec un effet "glass" */
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+}
+
+h1, h2 {
+  text-align: center;
+  color: var(--text-color);
+}
+
+h1 {
+  font-weight: 800;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* Styles de l'input et suggestions */
+.prompt-input {
+  position: relative;
+}
+
+#tagInput {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: var(--text-color);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#tagInput:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+}
+
+.suggestion-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.suggestion-item:hover {
+  background: #f3f4f6;
+}
+
+/* Style des tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.tag {
+  background: #e5e7eb;
+  border-radius: 20px;
+  padding: 8px 16px;
+  margin: 6px;
+  display: flex;
+  align-items: center;
+  cursor: grab;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.tag.duplicate {
+  background: #fecaca;
+}
+
+.tag span {
+  margin-right: 8px;
+  color: var(--text-color);
+}
+
+.tag .remove-tag {
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  color: #6b7280;
+  transition: color 0.2s ease;
+}
+
+.tag .remove-tag:hover {
+  color: var(--danger);
+}
+
+.tag.dragging {
+  opacity: 0.6;
+}
+
+/* Boutons modernisés et minimalistes */
+.buttons, .import-export-section, .save-prompt-section {
+  text-align: center;
+  margin: 20px 0;
+}
+
+button {
+  padding: 12px 24px;
+  margin: 8px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease;
+  font-size: 16px;
+}
+
+button:hover {
+  background: var(--primary-dark);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Input pour le nom du prompt */
+.save-prompt-section input {
+  padding: 12px 18px;
+  font-size: 16px;
+  width: 60%;
+  max-width: 300px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.save-prompt-section input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+/* Liste des prompts sauvegardés */
+.prompt-manager ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prompt-manager li {
+  background: #fff;
+  padding: 14px 18px;
+  margin: 10px 0;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.prompt-manager li:hover {
+  background: #f9fafb;
+}
+
+.prompt-manager li button {
+  margin-left: 8px;
+  background: var(--secondary);
+  padding: 8px 16px;
+  border-radius: 30px;
+}
+
+.prompt-manager li button.delete {
+  background: var(--danger);
+}
+
+.prompt-manager li button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
