@@ -1,4 +1,4 @@
-# Danbooru Prompt Writer Dark Mode
+# Danbooru Prompt Writer
 
 A simple and efficient prompt writing assistant for Danbooru tags. This project uses a web interface that lets you easily build, save, and export prompts by selecting tags.
 
