@@ -7,7 +7,7 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 - **Tag Suggestions:** Fetches available tags from a `tags.txt` file and provides live suggestions as you type.
 - **Drag & Drop:** Easily rearrange tags via drag & drop.
 - **Prompt Management:** Save, load, delete, export, and import prompts with a clean, minimalist interface.
-
+- **Docker Support:** Run the app in a containerized environment with the provided Dockerfile.
 
 ## Getting Started
 
@@ -15,29 +15,42 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 
 - [Node.js](https://nodejs.org/) (v14 or higher recommended)
 - npm (comes with Node.js)
+- Docker (if running via container)
 
 ### Installation
 
-1. **Clone the repository:**
+1. **Clone your forked repository:**
 
-   ```bash
-   git clone https://github.com/ImSakushi/DanbooruPromptWriter.git
-   cd DanbooruPromptWriter
-   ```
+    git clone https://github.com/ItsGeneralButtNaked/DanbooruPromptWriter.git
+    cd DanbooruPromptWriter
 
 2. **Install the dependencies:**
 
-   ```bash
-   npm install
-   ```
+    npm install
+
+   > Note: A `node_modules` folder will be created locally containing all dependencies.
 
 3. **Start the application:**
 
-   ```bash
-   npm start
-   ```
+    npm start
 
-   The server will start on port 3000 (or the port defined in your environment) and automatically open your default web browser to `http://localhost:3000`.
+   The server will start on port 3000 (or the port defined in your environment). Browser auto-opening has been disabled in `app.js`, so you will need to open `http://localhost:3000` manually.
+
+### Using Docker
+
+1. **Build the Docker image:**
+
+    docker build -t danboorupromptwriter .
+
+2. **Run the container:**
+
+    docker run -p 3000:3000 danboorupromptwriter
+
+3. **Optional with docker-compose:**
+
+    docker-compose up
+
+Then open `http://localhost:3000` in your browser.
 
 ## Usage
 
@@ -45,6 +58,5 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 - **Suggestions:** As you type, tag suggestions from `tags.txt` will appear. Click a suggestion to add it.
 - **Managing Prompts:** Use the provided buttons to copy, save, load, export, or import your prompts.
 - **Drag & Drop:** Rearrange the order of your tags by dragging them around.
-
 
 *Feel free to contribute or open issues if you encounter any bugs or have feature requests!*
