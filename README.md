@@ -40,7 +40,7 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
     npm start
     ```
 
-   The server will start on port 3000 (or the port defined in your environment). Browser auto-opening has been disabled in `app.js`, so you will need to open `http://localhost:3000` manually.
+   The server will start on port 3000 (or the port defined in your environment). The server will start on port 3000 (or the port defined in your environment) and automatically open your default web browser to http://localhost:3000.
 
 ### Using Docker
 
