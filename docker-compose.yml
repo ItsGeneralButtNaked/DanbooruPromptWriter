@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  danbooru:
+    build: .
+    container_name: danboorupromptwriter
+    ports:
+      - "3000:3000"
+    environment:
+      - DOCKERIZED=true
+    restart: unless-stopped
+

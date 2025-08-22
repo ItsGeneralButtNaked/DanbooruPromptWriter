@@ -14,7 +14,7 @@ app.get('/tags', (req, res) => {
   const filePath = path.join(__dirname, 'tags.txt');
   fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {
-      return res.status(500).json({ error: 'Impossible de lire le fichier des tags.' });
+      return res.status(500).json({ error: 'Unable to read tags file.' });
     }
     // Each line in the file is in the form "tag,number"
     const lines = data.split('\n').filter(line => line.trim() !== '');
@@ -27,15 +27,16 @@ app.get('/tags', (req, res) => {
 });
 
 app.listen(PORT, async () => {
-  console.log(`Le serveur est lancé sur le port ${PORT}`);
+  console.log(`The server is launched on port ${PORT}`);
 
-  try {
-    // Dynamically import the open package
-    const openModule = await import('open');
-    const openBrowser = openModule.default;
-    // Automatically open the browser at the server URL
-    openBrowser(`http://localhost:${PORT}`);
-  } catch (err) {
-    console.error('Erreur lors de l\'ouverture du navigateur:', err);
+  // Only try to auto-open the browser if not running in Docker
+  if (!process.env.DOCKERIZED) {
+    try {
+      const openModule = await import('open');
+      const openBrowser = openModule.default;
+      openBrowser(`http://localhost:${PORT}`);
+    } catch (err) {
+      console.error('Error opening browser:', err);
+    }
   }
 });
