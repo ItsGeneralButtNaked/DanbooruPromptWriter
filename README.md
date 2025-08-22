@@ -71,4 +71,4 @@ Then open `http://localhost:3000` in your browser.
 - **Managing Prompts:** Use the provided buttons to copy, save, load, export, or import your prompts.
 - **Drag & Drop:** Rearrange the order of your tags by dragging them around.
 
-*Feel free to contribute or open issues if you encounter any bugs or have feature requests!*
+*All credit and thanks to the original creator ImSakushi, I just forked his app made a couple of tiny tweaks and dockerized it for my own ease of use*
