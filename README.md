@@ -19,20 +19,26 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 
 ### Installation
 
-1. **Clone your forked repository:**
+1. **Clone the repository:**
 
+    ```bash
     git clone https://github.com/ItsGeneralButtNaked/DanbooruPromptWriter.git
     cd DanbooruPromptWriter
+    ```
 
-2. **Install the dependencies:**
+1. **Install the dependencies:**
 
+    ```bash
     npm install
+    ```
 
    > Note: A `node_modules` folder will be created locally containing all dependencies.
 
-3. **Start the application:**
+2. **Start the application:**
 
+    ```bash
     npm start
+    ```
 
    The server will start on port 3000 (or the port defined in your environment). Browser auto-opening has been disabled in `app.js`, so you will need to open `http://localhost:3000` manually.
 
@@ -40,15 +46,21 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 
 1. **Build the Docker image:**
 
+    ```bash
     docker build -t danboorupromptwriter .
+    ```
 
 2. **Run the container:**
 
+    ```bash
     docker run -p 3000:3000 danboorupromptwriter
+    ```
 
 3. **Optional with docker-compose:**
 
+    ```bash
     docker-compose up
+    ```
 
 Then open `http://localhost:3000` in your browser.
 
