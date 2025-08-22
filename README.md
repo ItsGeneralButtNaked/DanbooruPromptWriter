@@ -22,7 +22,7 @@ A simple and efficient prompt writing assistant for Danbooru tags. This project 
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/ItsGeneralButtNaked/DanbooruPromptWriter.git
+    git clone -b docker-version https://github.com/ItsGeneralButtNaked/DanbooruPromptWriter.git
     cd DanbooruPromptWriter
     ```
 
